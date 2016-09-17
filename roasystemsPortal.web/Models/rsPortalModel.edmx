@@ -1,0 +1,1048 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="rsPortalDBModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ActividadesXPuesto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="estOrgId" Type="bigint" Nullable="false" />
+          <Property Name="puestoId" Type="bigint" Nullable="false" />
+          <Property Name="padreId" Type="bigint" />
+          <Property Name="empleadoId" Type="bigint" />
+          <Property Name="nombre" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="2024" />
+          <Property Name="categSalarialId" Type="bigint" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Aplicaciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="512" />
+          <Property Name="url" Type="varchar" MaxLength="512" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Candidatos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="apPaterno" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apMaterno" Type="varchar" MaxLength="50" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="rfc" Type="varchar" MaxLength="13" />
+          <Property Name="usuarioId" Type="bigint" />
+          <Property Name="nombre" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="2024" />
+          <Property Name="categSalarialId" Type="bigint" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="candidatoId" Type="bigint" />
+          <Property Name="apPaterno" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apMaterno" Type="varchar" MaxLength="50" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="rfc" Type="varchar" MaxLength="13" />
+          <Property Name="usuarioId" Type="bigint" />
+          <Property Name="nombre" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="2024" />
+          <Property Name="categSalarialId" Type="bigint" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Empresas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="padreId" Type="bigint" />
+          <Property Name="nombre" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="2024" />
+          <Property Name="rfc" Type="varchar" MaxLength="14" />
+          <Property Name="domFiscal" Type="varchar" MaxLength="1024" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="EstructuraOrganizacional">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="empresaId" Type="bigint" Nullable="false" />
+          <Property Name="padreId" Type="bigint" />
+          <Property Name="nombre" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="2024" />
+          <Property Name="objetivo" Type="varchar" MaxLength="1024" />
+          <Property Name="mision" Type="varchar" MaxLength="1024" />
+          <Property Name="vision" Type="varchar" MaxLength="1024" />
+          <Property Name="valores" Type="varchar" MaxLength="2024" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Grupos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="empresaId" Type="bigint" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="1024" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="GruposXUsuario">
+          <Key>
+            <PropertyRef Name="grupoId" />
+            <PropertyRef Name="usuarioId" />
+          </Key>
+          <Property Name="grupoId" Type="bigint" Nullable="false" />
+          <Property Name="usuarioId" Type="bigint" Nullable="false" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="512" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="1024" />
+          <Property Name="padreId" Type="bigint" />
+          <Property Name="culture" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="1024" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+          <Property Name="DELETED" Type="bool" Nullable="false" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Modulos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="aplicacionId" Type="bigint" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="512" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="PermisosXGrupo">
+          <Key>
+            <PropertyRef Name="moduloId" />
+            <PropertyRef Name="grupoId" />
+            <PropertyRef Name="empresaId" />
+          </Key>
+          <Property Name="moduloId" Type="bigint" Nullable="false" />
+          <Property Name="grupoId" Type="bigint" Nullable="false" />
+          <Property Name="empresaId" Type="bigint" Nullable="false" />
+          <Property Name="pSELECT" Type="bit" Nullable="false" />
+          <Property Name="pINSERT" Type="bit" Nullable="false" />
+          <Property Name="pUPDATE" Type="bit" Nullable="false" />
+          <Property Name="pDELETE" Type="bit" Nullable="false" />
+          <Property Name="pUNDELETE" Type="bit" Nullable="false" />
+          <Property Name="pKILL" Type="bit" Nullable="false" />
+          <Property Name="pREPORT" Type="bit" Nullable="false" />
+          <Property Name="pPRINT" Type="bit" Nullable="false" />
+          <Property Name="pDOWNLOAD" Type="bit" Nullable="false" />
+          <Property Name="pUPLOAD" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="PermisosXUsuario">
+          <Key>
+            <PropertyRef Name="moduloId" />
+            <PropertyRef Name="usuarioId" />
+            <PropertyRef Name="empresaId" />
+          </Key>
+          <Property Name="moduloId" Type="bigint" Nullable="false" />
+          <Property Name="usuarioId" Type="bigint" Nullable="false" />
+          <Property Name="empresaId" Type="bigint" Nullable="false" />
+          <Property Name="pSELECT" Type="bit" />
+          <Property Name="pINSERT" Type="bit" />
+          <Property Name="pUPDATE" Type="bit" />
+          <Property Name="pDELETE" Type="bit" />
+          <Property Name="pUNDELETE" Type="bit" />
+          <Property Name="pKILL" Type="bit" />
+          <Property Name="pREPORT" Type="bit" />
+          <Property Name="pPRINT" Type="bit" />
+          <Property Name="pDOWNLOAD" Type="bit" />
+          <Property Name="pUPLOAD" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Plazas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="estOrgId" Type="bigint" Nullable="false" />
+          <Property Name="puestoId" Type="bigint" Nullable="false" />
+          <Property Name="padreId" Type="bigint" />
+          <Property Name="empleadoId" Type="bigint" />
+          <Property Name="nombre" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="2024" />
+          <Property Name="categSalarialId" Type="bigint" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Publicaciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="menuId" Type="bigint" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="2024" />
+          <Property Name="iconoUrl" Type="varchar" MaxLength="1024" />
+          <Property Name="imagenUrl" Type="varchar" MaxLength="1024" />
+          <Property Name="publicacionTipo" Type="varchar" MaxLength="45" />
+          <Property Name="texto" Type="text" />
+          <Property Name="palabrasClave" Type="varchar" MaxLength="2024" />
+          <Property Name="culture" Type="varchar" MaxLength="10" />
+          <Property Name="CREATED_BY" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Puestos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="2024" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="loginName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="contrasenia" Type="blob" Nullable="false" />
+          <Property Name="firma" Type="blob" />
+          <Property Name="apPaterno" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apMaterno" Type="varchar" MaxLength="50" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="eMail" Type="varchar" MaxLength="512" Nullable="false" />
+          <Property Name="tweeter" Type="varchar" MaxLength="512" />
+          <Property Name="facebook" Type="varchar" MaxLength="512" />
+          <Property Name="telefono" Type="varchar" MaxLength="20" />
+          <Property Name="celular" Type="varchar" MaxLength="20" />
+          <Property Name="culture" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="requiereCambiarPassword" Type="bit" Nullable="false" />
+          <Property Name="requiereCambiarFirma" Type="bit" Nullable="false" />
+          <Property Name="esAdmin" Type="bit" Nullable="false" />
+          <Property Name="diasDuracionContrasenia" Type="int" />
+          <Property Name="diasDuracionFirma" Type="int" />
+          <Property Name="recibirNotificaciones" Type="bit" />
+          <Property Name="aceptaTerminosDeServicio" Type="bit" />
+          <Property Name="confirmed" Type="bit" Nullable="false" />
+          <Property Name="CONFIRMATION_DATE" Type="datetime" Precision="0" />
+          <Property Name="CREATED_BY" Type="bigint" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="bigint" />
+          <Property Name="LAST_UPDATE_DATE" Type="datetime" Precision="0" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_DATE" Type="datetime" Precision="0" />
+        </EntityType>
+        <Function Name="SPR_Aplicaciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rsPortalDB" />
+        <Function Name="SPR_Empresas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rsPortalDB" />
+        <Function Name="SPR_Grupos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rsPortalDB" />
+        <Function Name="SPR_GruposXUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rsPortalDB" />
+        <Function Name="SPR_Menus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rsPortalDB" />
+        <Function Name="SPR_Modulos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rsPortalDB" />
+        <Function Name="SPR_Permisos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rsPortalDB" />
+        <Function Name="SPR_Usuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rsPortalDB" />
+        <EntityContainer Name="rsPortalDBModelStoreContainer">
+          <EntitySet Name="ActividadesXPuesto" EntityType="Self.ActividadesXPuesto" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="Aplicaciones" EntityType="Self.Aplicaciones" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="Candidatos" EntityType="Self.Candidatos" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="Empresas" EntityType="Self.Empresas" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="EstructuraOrganizacional" EntityType="Self.EstructuraOrganizacional" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="Grupos" EntityType="Self.Grupos" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="GruposXUsuario" EntityType="Self.GruposXUsuario" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="Menus" EntityType="Self.Menus" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="Modulos" EntityType="Self.Modulos" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="PermisosXGrupo" EntityType="Self.PermisosXGrupo" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="PermisosXUsuario" EntityType="Self.PermisosXUsuario" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="Plazas" EntityType="Self.Plazas" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="Publicaciones" EntityType="Self.Publicaciones" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="Puestos" EntityType="Self.Puestos" Schema="rsPortalDB" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="rsPortalDB" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="rsPortalDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ActividadesXPuesto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estOrgId" Type="Int64" Nullable="false" />
+          <Property Name="puestoId" Type="Int64" Nullable="false" />
+          <Property Name="padreId" Type="Int64" />
+          <Property Name="empleadoId" Type="Int64" />
+          <Property Name="nombre" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="2024" FixedLength="false" Unicode="false" />
+          <Property Name="categSalarialId" Type="Int64" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Aplicacione">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Name="url" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Candidato">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="apPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="usuarioId" Type="Int64" />
+          <Property Name="nombre" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="2024" FixedLength="false" Unicode="false" />
+          <Property Name="categSalarialId" Type="Int64" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="candidatoId" Type="Int64" />
+          <Property Name="apPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="usuarioId" Type="Int64" />
+          <Property Name="nombre" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="2024" FixedLength="false" Unicode="false" />
+          <Property Name="categSalarialId" Type="Int64" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="padreId" Type="Int64" />
+          <Property Name="nombre" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="2024" FixedLength="false" Unicode="false" />
+          <Property Name="rfc" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="domFiscal" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="EstructuraOrganizacional">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empresaId" Type="Int64" Nullable="false" />
+          <Property Name="padreId" Type="Int64" />
+          <Property Name="nombre" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="2024" FixedLength="false" Unicode="false" />
+          <Property Name="objetivo" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="mision" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="vision" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="valores" Type="String" MaxLength="2024" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Grupos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empresaId" Type="Int64" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="GruposXUsuario">
+          <Key>
+            <PropertyRef Name="grupoId" />
+            <PropertyRef Name="usuarioId" />
+          </Key>
+          <Property Name="grupoId" Type="Int64" Nullable="false" />
+          <Property Name="usuarioId" Type="Int64" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="512" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="padreId" Type="Int64" />
+          <Property Name="culture" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="url" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Modulo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aplicacionId" Type="Int64" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="PermisosXGrupo">
+          <Key>
+            <PropertyRef Name="moduloId" />
+            <PropertyRef Name="grupoId" />
+            <PropertyRef Name="empresaId" />
+          </Key>
+          <Property Name="moduloId" Type="Int64" Nullable="false" />
+          <Property Name="grupoId" Type="Int64" Nullable="false" />
+          <Property Name="empresaId" Type="Int64" Nullable="false" />
+          <Property Name="pSELECT" Type="Boolean" Nullable="false" />
+          <Property Name="pINSERT" Type="Boolean" Nullable="false" />
+          <Property Name="pUPDATE" Type="Boolean" Nullable="false" />
+          <Property Name="pDELETE" Type="Boolean" Nullable="false" />
+          <Property Name="pUNDELETE" Type="Boolean" Nullable="false" />
+          <Property Name="pKILL" Type="Boolean" Nullable="false" />
+          <Property Name="pREPORT" Type="Boolean" Nullable="false" />
+          <Property Name="pPRINT" Type="Boolean" Nullable="false" />
+          <Property Name="pDOWNLOAD" Type="Boolean" Nullable="false" />
+          <Property Name="pUPLOAD" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="PermisosXUsuario">
+          <Key>
+            <PropertyRef Name="moduloId" />
+            <PropertyRef Name="usuarioId" />
+            <PropertyRef Name="empresaId" />
+          </Key>
+          <Property Name="moduloId" Type="Int64" Nullable="false" />
+          <Property Name="usuarioId" Type="Int64" Nullable="false" />
+          <Property Name="empresaId" Type="Int64" Nullable="false" />
+          <Property Name="pSELECT" Type="Boolean" />
+          <Property Name="pINSERT" Type="Boolean" />
+          <Property Name="pUPDATE" Type="Boolean" />
+          <Property Name="pDELETE" Type="Boolean" />
+          <Property Name="pUNDELETE" Type="Boolean" />
+          <Property Name="pKILL" Type="Boolean" />
+          <Property Name="pREPORT" Type="Boolean" />
+          <Property Name="pPRINT" Type="Boolean" />
+          <Property Name="pDOWNLOAD" Type="Boolean" />
+          <Property Name="pUPLOAD" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Plaza">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estOrgId" Type="Int64" Nullable="false" />
+          <Property Name="puestoId" Type="Int64" Nullable="false" />
+          <Property Name="padreId" Type="Int64" />
+          <Property Name="empleadoId" Type="Int64" />
+          <Property Name="nombre" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="2024" FixedLength="false" Unicode="false" />
+          <Property Name="categSalarialId" Type="Int64" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Publicacione">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="menuId" Type="Int64" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="2024" FixedLength="false" Unicode="false" />
+          <Property Name="iconoUrl" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="imagenUrl" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="publicacionTipo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="texto" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="palabrasClave" Type="String" MaxLength="2024" FixedLength="false" Unicode="false" />
+          <Property Name="culture" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_BY" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Puesto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="2024" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="loginName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contrasenia" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="firma" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="apPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="eMail" Type="String" MaxLength="512" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tweeter" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Name="facebook" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="culture" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="requiereCambiarPassword" Type="Boolean" Nullable="false" />
+          <Property Name="requiereCambiarFirma" Type="Boolean" Nullable="false" />
+          <Property Name="esAdmin" Type="Boolean" Nullable="false" />
+          <Property Name="diasDuracionContrasenia" Type="Int32" />
+          <Property Name="diasDuracionFirma" Type="Int32" />
+          <Property Name="recibirNotificaciones" Type="Boolean" />
+          <Property Name="aceptaTerminosDeServicio" Type="Boolean" />
+          <Property Name="confirmed" Type="Boolean" Nullable="false" />
+          <Property Name="CONFIRMATION_DATE" Type="DateTime" />
+          <Property Name="CREATED_BY" Type="Int64" Nullable="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="LAST_UPDATED_BY" Type="Int64" />
+          <Property Name="LAST_UPDATE_DATE" Type="DateTime" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityContainer Name="rsPortalDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ActividadesXPuestoes" EntityType="Self.ActividadesXPuesto" />
+          <EntitySet Name="Aplicaciones" EntityType="Self.Aplicacione" />
+          <EntitySet Name="Candidatos" EntityType="Self.Candidato" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleado" />
+          <EntitySet Name="Empresas" EntityType="Self.Empresa" />
+          <EntitySet Name="EstructuraOrganizacionals" EntityType="Self.EstructuraOrganizacional" />
+          <EntitySet Name="Grupos" EntityType="Self.Grupos" />
+          <EntitySet Name="GruposXUsuarios" EntityType="Self.GruposXUsuario" />
+          <EntitySet Name="Menus" EntityType="Self.Menu" />
+          <EntitySet Name="Modulos" EntityType="Self.Modulo" />
+          <EntitySet Name="PermisosXGrupoes" EntityType="Self.PermisosXGrupo" />
+          <EntitySet Name="PermisosXUsuarios" EntityType="Self.PermisosXUsuario" />
+          <EntitySet Name="Plazas" EntityType="Self.Plaza" />
+          <EntitySet Name="Publicaciones" EntityType="Self.Publicacione" />
+          <EntitySet Name="Puestos" EntityType="Self.Puesto" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="rsPortalDBModelStoreContainer" CdmEntityContainer="rsPortalDBEntities">
+          <EntitySetMapping Name="ActividadesXPuestoes">
+            <EntityTypeMapping TypeName="rsPortalDBModel.ActividadesXPuesto">
+              <MappingFragment StoreEntitySet="ActividadesXPuesto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="estOrgId" ColumnName="estOrgId" />
+                <ScalarProperty Name="puestoId" ColumnName="puestoId" />
+                <ScalarProperty Name="padreId" ColumnName="padreId" />
+                <ScalarProperty Name="empleadoId" ColumnName="empleadoId" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="categSalarialId" ColumnName="categSalarialId" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Aplicaciones">
+            <EntityTypeMapping TypeName="rsPortalDBModel.Aplicacione">
+              <MappingFragment StoreEntitySet="Aplicaciones">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Candidatos">
+            <EntityTypeMapping TypeName="rsPortalDBModel.Candidato">
+              <MappingFragment StoreEntitySet="Candidatos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="apPaterno" ColumnName="apPaterno" />
+                <ScalarProperty Name="apMaterno" ColumnName="apMaterno" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="categSalarialId" ColumnName="categSalarialId" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleados">
+            <EntityTypeMapping TypeName="rsPortalDBModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="candidatoId" ColumnName="candidatoId" />
+                <ScalarProperty Name="apPaterno" ColumnName="apPaterno" />
+                <ScalarProperty Name="apMaterno" ColumnName="apMaterno" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="categSalarialId" ColumnName="categSalarialId" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empresas">
+            <EntityTypeMapping TypeName="rsPortalDBModel.Empresa">
+              <MappingFragment StoreEntitySet="Empresas">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="padreId" ColumnName="padreId" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="domFiscal" ColumnName="domFiscal" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstructuraOrganizacionals">
+            <EntityTypeMapping TypeName="rsPortalDBModel.EstructuraOrganizacional">
+              <MappingFragment StoreEntitySet="EstructuraOrganizacional">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="empresaId" ColumnName="empresaId" />
+                <ScalarProperty Name="padreId" ColumnName="padreId" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="objetivo" ColumnName="objetivo" />
+                <ScalarProperty Name="mision" ColumnName="mision" />
+                <ScalarProperty Name="vision" ColumnName="vision" />
+                <ScalarProperty Name="valores" ColumnName="valores" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grupos">
+            <EntityTypeMapping TypeName="rsPortalDBModel.Grupos">
+              <MappingFragment StoreEntitySet="Grupos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="empresaId" ColumnName="empresaId" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GruposXUsuarios">
+            <EntityTypeMapping TypeName="rsPortalDBModel.GruposXUsuario">
+              <MappingFragment StoreEntitySet="GruposXUsuario">
+                <ScalarProperty Name="grupoId" ColumnName="grupoId" />
+                <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="rsPortalDBModel.Menu">
+              <MappingFragment StoreEntitySet="Menus">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="padreId" ColumnName="padreId" />
+                <ScalarProperty Name="culture" ColumnName="culture" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modulos">
+            <EntityTypeMapping TypeName="rsPortalDBModel.Modulo">
+              <MappingFragment StoreEntitySet="Modulos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="aplicacionId" ColumnName="aplicacionId" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermisosXGrupoes">
+            <EntityTypeMapping TypeName="rsPortalDBModel.PermisosXGrupo">
+              <MappingFragment StoreEntitySet="PermisosXGrupo">
+                <ScalarProperty Name="moduloId" ColumnName="moduloId" />
+                <ScalarProperty Name="grupoId" ColumnName="grupoId" />
+                <ScalarProperty Name="empresaId" ColumnName="empresaId" />
+                <ScalarProperty Name="pSELECT" ColumnName="pSELECT" />
+                <ScalarProperty Name="pINSERT" ColumnName="pINSERT" />
+                <ScalarProperty Name="pUPDATE" ColumnName="pUPDATE" />
+                <ScalarProperty Name="pDELETE" ColumnName="pDELETE" />
+                <ScalarProperty Name="pUNDELETE" ColumnName="pUNDELETE" />
+                <ScalarProperty Name="pKILL" ColumnName="pKILL" />
+                <ScalarProperty Name="pREPORT" ColumnName="pREPORT" />
+                <ScalarProperty Name="pPRINT" ColumnName="pPRINT" />
+                <ScalarProperty Name="pDOWNLOAD" ColumnName="pDOWNLOAD" />
+                <ScalarProperty Name="pUPLOAD" ColumnName="pUPLOAD" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermisosXUsuarios">
+            <EntityTypeMapping TypeName="rsPortalDBModel.PermisosXUsuario">
+              <MappingFragment StoreEntitySet="PermisosXUsuario">
+                <ScalarProperty Name="moduloId" ColumnName="moduloId" />
+                <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+                <ScalarProperty Name="empresaId" ColumnName="empresaId" />
+                <ScalarProperty Name="pSELECT" ColumnName="pSELECT" />
+                <ScalarProperty Name="pINSERT" ColumnName="pINSERT" />
+                <ScalarProperty Name="pUPDATE" ColumnName="pUPDATE" />
+                <ScalarProperty Name="pDELETE" ColumnName="pDELETE" />
+                <ScalarProperty Name="pUNDELETE" ColumnName="pUNDELETE" />
+                <ScalarProperty Name="pKILL" ColumnName="pKILL" />
+                <ScalarProperty Name="pREPORT" ColumnName="pREPORT" />
+                <ScalarProperty Name="pPRINT" ColumnName="pPRINT" />
+                <ScalarProperty Name="pDOWNLOAD" ColumnName="pDOWNLOAD" />
+                <ScalarProperty Name="pUPLOAD" ColumnName="pUPLOAD" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plazas">
+            <EntityTypeMapping TypeName="rsPortalDBModel.Plaza">
+              <MappingFragment StoreEntitySet="Plazas">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="estOrgId" ColumnName="estOrgId" />
+                <ScalarProperty Name="puestoId" ColumnName="puestoId" />
+                <ScalarProperty Name="padreId" ColumnName="padreId" />
+                <ScalarProperty Name="empleadoId" ColumnName="empleadoId" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="categSalarialId" ColumnName="categSalarialId" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Publicaciones">
+            <EntityTypeMapping TypeName="rsPortalDBModel.Publicacione">
+              <MappingFragment StoreEntitySet="Publicaciones">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="menuId" ColumnName="menuId" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="iconoUrl" ColumnName="iconoUrl" />
+                <ScalarProperty Name="imagenUrl" ColumnName="imagenUrl" />
+                <ScalarProperty Name="publicacionTipo" ColumnName="publicacionTipo" />
+                <ScalarProperty Name="texto" ColumnName="texto" />
+                <ScalarProperty Name="palabrasClave" ColumnName="palabrasClave" />
+                <ScalarProperty Name="culture" ColumnName="culture" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Puestos">
+            <EntityTypeMapping TypeName="rsPortalDBModel.Puesto">
+              <MappingFragment StoreEntitySet="Puestos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="rsPortalDBModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="loginName" ColumnName="loginName" />
+                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+                <ScalarProperty Name="firma" ColumnName="firma" />
+                <ScalarProperty Name="apPaterno" ColumnName="apPaterno" />
+                <ScalarProperty Name="apMaterno" ColumnName="apMaterno" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="eMail" ColumnName="eMail" />
+                <ScalarProperty Name="tweeter" ColumnName="tweeter" />
+                <ScalarProperty Name="facebook" ColumnName="facebook" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="culture" ColumnName="culture" />
+                <ScalarProperty Name="requiereCambiarPassword" ColumnName="requiereCambiarPassword" />
+                <ScalarProperty Name="requiereCambiarFirma" ColumnName="requiereCambiarFirma" />
+                <ScalarProperty Name="esAdmin" ColumnName="esAdmin" />
+                <ScalarProperty Name="diasDuracionContrasenia" ColumnName="diasDuracionContrasenia" />
+                <ScalarProperty Name="diasDuracionFirma" ColumnName="diasDuracionFirma" />
+                <ScalarProperty Name="recibirNotificaciones" ColumnName="recibirNotificaciones" />
+                <ScalarProperty Name="aceptaTerminosDeServicio" ColumnName="aceptaTerminosDeServicio" />
+                <ScalarProperty Name="confirmed" ColumnName="confirmed" />
+                <ScalarProperty Name="CONFIRMATION_DATE" ColumnName="CONFIRMATION_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="LAST_UPDATED_BY" ColumnName="LAST_UPDATED_BY" />
+                <ScalarProperty Name="LAST_UPDATE_DATE" ColumnName="LAST_UPDATE_DATE" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
