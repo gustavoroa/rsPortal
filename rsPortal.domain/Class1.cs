@@ -8,5 +8,7 @@ namespace rsPortal.domain
 {
     public class Class1
     {
+        private object solething;
+
     }
 }
